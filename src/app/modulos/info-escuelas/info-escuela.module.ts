@@ -23,5 +23,5 @@ import {FormsModule} from "@angular/forms";
     FormsModule
   ]
 })
-export class InfoEscuelasModule {
+export class InfoEscuelaModule {
 }

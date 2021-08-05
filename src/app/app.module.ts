@@ -7,7 +7,7 @@ import {APP_ROUTING} from "./app.rutas";
 import {AppComponent} from './app.component';
 
 //modulos
-import {InfoEscuelasModule} from "./modulos/info-escuelas/info-escuelas.module";
+import {InfoEscuelaModule} from "./modulos/info-escuelas/info-escuela.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import {InfoEscuelasModule} from "./modulos/info-escuelas/info-escuelas.module";
     BrowserModule,
     APP_ROUTING,
     BrowserAnimationsModule,
-    InfoEscuelasModule
+    InfoEscuelaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
