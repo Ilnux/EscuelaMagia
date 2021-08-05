@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~animate.css/animate.min.css";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.icono {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  margin-left: 100px;
+}
+
+
+.fuente {
+  font-family: 'Antic Didone', serif;
+}

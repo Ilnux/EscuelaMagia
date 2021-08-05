@@ -1,0 +1,66 @@
+<div class="container pt-5">
+
+<div class="row" *ngIf="vMostrarMiembros">
+  <div class="col col-sm-2 ">
+    <div class="btn btn-outline-dark " (click)="revertirEstados()">
+      <em class="fas fa-house-damage "><span class="fuente">Casas</span> </em>
+    </div>
+  </div>
+
+  <div  class=" col col-sm-4 offset-md-6">
+    <input
+      [(ngModel)]="filtro"
+      (ngModelChange)="filtrarMiembrosPorNombre()"
+      class=" icono"
+      type="text" placeholder=" Filtrar">
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3 btn" *ngIf="mostrarCarrousel">
+      <div id="carouselExampleControls" class="carousel slide animate__animated animate__heartBeat "
+           data-bs-ride="carousel">
+        <div class="carousel-inner  rounded-circle animate__animated animate__fadeIn animate__slow">
+          <div class="carousel-item active ">
+            <app-tarjeta-casa (click)="mostrarMienbros(listaGryffindor)"
+                              [rutaImagen]="rutaImagenGryffindor"
+                              [listaCasas]="listaGryffindor"></app-tarjeta-casa>
+          </div>
+
+          <div class="carousel-item">
+            <app-tarjeta-casa (click)="mostrarMienbros(listaHufflepuff)"
+                              [rutaImagen]="rutaImagenHufflepuff"
+                              [listaCasas]="listaHufflepuff"></app-tarjeta-casa>
+          </div>
+          <div class="carousel-item">
+            <app-tarjeta-casa (click)="mostrarMienbros(listaRavenclaw)"
+                              [rutaImagen]="rutaImagenRavenclaw"
+                              [listaCasas]="listaRavenclaw"></app-tarjeta-casa>
+          </div>
+          <div class="carousel-item">
+            <app-tarjeta-casa (click)="mostrarMienbros(listaSlytherin)"
+                              [rutaImagen]="rutaImagenSlytherin"
+                              [listaCasas]="listaSlytherin"></app-tarjeta-casa>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" style="color: black; font-size: 40px"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+          <em class="fas fa-arrow-circle-left"></em>
+        </button>
+        <button class="carousel-control-next" style="color: black; font-size: 40px" type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+          <em class="fas fa-arrow-circle-right"></em>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="vMostrarMiembros" class="row mt-5">
+    <div *ngFor="let listaDato of listaMiembroFiltrado"
+         class="col-md-6 animate__animated animate__fadeIn animate__slow">
+      <app-tarjeta-miembro [miembro]="listaDato"></app-tarjeta-miembro>
+    </div>
+  </div>
+</div>
+
