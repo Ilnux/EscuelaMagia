@@ -1,20 +1,20 @@
 <div class="container pt-5">
 
-<div class="row" *ngIf="vMostrarMiembros">
-  <div class="col col-sm-2 ">
-    <div class="btn btn-outline-dark " (click)="revertirEstados()">
-      <em class="fas fa-house-damage "><span class="fuente">Casas</span> </em>
+  <div class="row" *ngIf="vMostrarMiembros">
+    <div class="col col-sm-2 ">
+      <div class="btn btn-outline-dark " (click)="revertirEstados()">
+        <em class="fas fa-house-damage "><span class="fuente">Casas</span> </em>
+      </div>
+    </div>
+
+    <div class=" col col-sm-1 col-md-2 offset-sm-6">
+      <input
+        [(ngModel)]="filtro"
+        (ngModelChange)="filtrarMiembrosPorNombre()"
+        class=" icono"
+        type="text" placeholder=" Filtrar">
     </div>
   </div>
-
-  <div  class=" col col-sm-1 col-md-2 offset-sm-6">
-    <input
-      [(ngModel)]="filtro"
-      (ngModelChange)="filtrarMiembrosPorNombre()"
-      class=" icono"
-      type="text" placeholder=" Filtrar">
-  </div>
-</div>
 
   <div class="row">
     <div class="col-md-6 offset-md-2 btn" *ngIf="mostrarCarrousel">
@@ -22,23 +22,23 @@
            data-bs-ride="carousel">
         <div class="carousel-inner  rounded-circle animate__animated animate__fadeIn animate__slow">
           <div class="carousel-item active ">
-            <app-tarjeta-casa (click)="mostrarMienbros(listaGryffindor)"
+            <app-tarjeta-casa (click)="mostrarMiembros(listaGryffindor)"
                               [rutaImagen]="rutaImagenGryffindor"
                               [listaCasas]="listaGryffindor"></app-tarjeta-casa>
           </div>
 
           <div class="carousel-item">
-            <app-tarjeta-casa (click)="mostrarMienbros(listaHufflepuff)"
+            <app-tarjeta-casa (click)="mostrarMiembros(listaHufflepuff)"
                               [rutaImagen]="rutaImagenHufflepuff"
                               [listaCasas]="listaHufflepuff"></app-tarjeta-casa>
           </div>
           <div class="carousel-item">
-            <app-tarjeta-casa (click)="mostrarMienbros(listaRavenclaw)"
+            <app-tarjeta-casa (click)="mostrarMiembros(listaRavenclaw)"
                               [rutaImagen]="rutaImagenRavenclaw"
                               [listaCasas]="listaRavenclaw"></app-tarjeta-casa>
           </div>
           <div class="carousel-item">
-            <app-tarjeta-casa (click)="mostrarMienbros(listaSlytherin)"
+            <app-tarjeta-casa (click)="mostrarMiembros(listaSlytherin)"
                               [rutaImagen]="rutaImagenSlytherin"
                               [listaCasas]="listaSlytherin"></app-tarjeta-casa>
           </div>
@@ -56,6 +56,7 @@
       </div>
     </div>
   </div>
+
   <div *ngIf="vMostrarMiembros" class="row mt-5">
     <div *ngFor="let listaDato of listaMiembroFiltrado"
          class="col-md-6 animate__animated animate__fadeIn animate__slow">

@@ -11,7 +11,7 @@ import {InfoEscuelaModule} from "./modulos/info-escuelas/info-escuela.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

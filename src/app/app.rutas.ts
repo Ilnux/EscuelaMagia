@@ -1,10 +1,11 @@
 import {RouterModule, Routes} from '@angular/router';
-import {InicioComponent} from "./componentes/inicio/inicio.component";
-
 
 
 const RUTAS: Routes = [
-  {path: 'inicio', component: InicioComponent},
+  {
+    path: 'info',
+    loadChildren: () => import('./modulos/info-escuelas/info-escuela.module').then(m => m.InfoEscuelaModule)
+  },
   {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
 ];
 

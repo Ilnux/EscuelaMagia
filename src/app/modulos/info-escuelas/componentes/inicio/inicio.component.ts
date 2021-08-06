@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {PersonaService} from "../../servicios/persona.service";
-import {PersonaModel} from "../../modelos/Persona";
+import {PersonaService} from "../../../../servicios/persona.service";
+import {PersonaModel} from "../../../../interfaces/Persona.interface";
 
 @Component({
   selector: 'app-inicio',
@@ -27,10 +27,10 @@ export class InicioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.consultarPersonas();
+    this.servicioConsultarPersonas();
   }
 
-  consultarPersonas(): void {
+  servicioConsultarPersonas(): void {
     this.personaService.listarPersonas()
       .subscribe((listaPersonas: PersonaModel[]) => {
         this.llenarListasPorCasa(listaPersonas);
@@ -44,7 +44,7 @@ export class InicioComponent implements OnInit {
     this.listaSlytherin = lPersonas.filter(persona => persona.house == "Slytherin");
   }
 
-  mostrarMienbros(lPersonas: PersonaModel[]): void {
+  mostrarMiembros(lPersonas: PersonaModel[]): void {
     this.listaMiembrosSeleccionados = [];
     this.listaMiembroFiltrado = [];
     this.listaMiembrosSeleccionados = lPersonas;
