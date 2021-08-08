@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {PersonaModel} from "../../../../interfaces/Persona.interface";
+import {Persona} from "../../../../interfaces/Persona.interface";
 
 @Component({
   selector: 'app-tarjeta-miembro',
@@ -7,5 +7,5 @@ import {PersonaModel} from "../../../../interfaces/Persona.interface";
 })
 
 export class TarjetaMiembroComponent {
-  @Input() miembro: PersonaModel = {} as PersonaModel;
+  @Input() miembro: Persona = {} as Persona;
 }

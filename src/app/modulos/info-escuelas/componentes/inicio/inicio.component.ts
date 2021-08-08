@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PersonaService} from "../../../../servicios/persona.service";
-import {PersonaModel} from "../../../../interfaces/Persona.interface";
+import {Persona} from "../../../../interfaces/Persona.interface";
 
 @Component({
   selector: 'app-inicio',
@@ -8,12 +8,12 @@ import {PersonaModel} from "../../../../interfaces/Persona.interface";
 })
 
 export class InicioComponent implements OnInit {
-  listaGryffindor: PersonaModel[] = [];
-  listaHufflepuff: PersonaModel[] = [];
-  listaRavenclaw: PersonaModel[] = [];
-  listaSlytherin: PersonaModel[] = [];
-  listaMiembrosSeleccionados: PersonaModel[] = [];
-  listaMiembroFiltrado: PersonaModel[] = [];
+  listaGryffindor: Persona[] = [];
+  listaHufflepuff: Persona[] = [];
+  listaRavenclaw: Persona[] = [];
+  listaSlytherin: Persona[] = [];
+  listaMiembrosSeleccionados: Persona[] = [];
+  listaMiembroFiltrado: Persona[] = [];
   filtro: string = '';
   rutaImagenGryffindor: string = "assets/img/Gryffindor.webp";
   rutaImagenHufflepuff: string = "assets/img/Hufflepuff.webp";
@@ -32,20 +32,19 @@ export class InicioComponent implements OnInit {
 
   servicioConsultarPersonas(): void {
     this.personaService.listarPersonas()
-      .subscribe((listaPersonas: PersonaModel[]) => {
+      .subscribe((listaPersonas: Persona[]) => {
         this.llenarListasPorCasa(listaPersonas);
       })
   }
 
-  llenarListasPorCasa(lPersonas: PersonaModel[]): void {
+  llenarListasPorCasa(lPersonas: Persona[]): void {
     this.listaGryffindor = lPersonas.filter(persona => persona.house == "Gryffindor");
     this.listaHufflepuff = lPersonas.filter(persona => persona.house == "Hufflepuff");
     this.listaRavenclaw = lPersonas.filter(persona => persona.house == "Ravenclaw");
     this.listaSlytherin = lPersonas.filter(persona => persona.house == "Slytherin");
   }
 
-  mostrarMiembros(lPersonas: PersonaModel[]): void {
-    this.listaMiembrosSeleccionados = [];
+  mostrarMiembros(lPersonas: Persona[]): void {
     this.listaMiembroFiltrado = [];
     this.listaMiembrosSeleccionados = lPersonas;
 

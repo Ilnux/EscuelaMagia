@@ -1,4 +1,4 @@
-export interface PersonaModel {
+export interface Persona {
   name: string;
   species: string;
   gender: string;
@@ -9,7 +9,7 @@ export interface PersonaModel {
   eyeColour: string;
   hairColour: string;
   patronus: string;
-  hogwartsStudent: boolean ;
+  hogwartsStudent: boolean;
   hogwartsStaff: boolean;
   actor: string;
   alive: boolean;

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {PersonaModel} from "../interfaces/Persona.interface";
+import {Persona} from "../interfaces/Persona.interface";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -12,7 +12,7 @@ export class PersonaService {
   constructor(private http: HttpClient) {
   }
 
-  listarPersonas(): Observable<PersonaModel[]> {
-    return this.http.get<PersonaModel[]>(`${this.URL}`);
+  listarPersonas(): Observable<Persona[]> {
+    return this.http.get<Persona[]>(`${this.URL}`);
   }
 }

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {PersonaModel} from "../../../../interfaces/Persona.interface";
+import {Persona} from "../../../../interfaces/Persona.interface";
 
 @Component({
   selector: 'app-tarjeta-casa',
@@ -7,12 +7,8 @@ import {PersonaModel} from "../../../../interfaces/Persona.interface";
 })
 export class TarjetaCasaComponent {
 
-  @Input() listaCasas: PersonaModel[] = [];
+  @Input() listaCasas: Persona[] = [];
   @Input() rutaImagen: string = '';
-
-
-  constructor() {
-  }
 
 
 }
